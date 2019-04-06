@@ -1,9 +1,7 @@
 # InkyTwitterTrends
 Pulls locally trending Twitter topics and displays them on a [Pimoroni Inky pHAT](https://shop.pimoroni.com/products/inky-phat)
 
-Original Twitter Trends script by [@ideoforms](https://github.com/ideoforms/)
-
-https://github.com/ideoforms/python-twitter-examples
+Original Twitter Trends script by [@ideoforms](https://github.com/ideoforms/) - https://github.com/ideoforms/python-twitter-examples
 
 Script modified to display on Inky pHAT by [@samhector](https://twitter.com/samhector)
 
