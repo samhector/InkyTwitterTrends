@@ -1,11 +1,11 @@
 # InkyTwitterTrends
 Pulls locally trending Twitter topics and displays them on a [Pimoroni Inky pHAT](https://shop.pimoroni.com/products/inky-phat)
 
-Original Twitter Trends script by @ideoforms
+Original Twitter Trends script by [@ideoforms](https://github.com/ideoforms/)
 
 https://github.com/ideoforms/python-twitter-examples
 
-Script modified to display on Inky pHAT by @samhector
+Script modified to display on Inky pHAT by [@samhector](https://twitter.com/samhector)
 
 # Setup
 ## Twitter Dev Account
@@ -16,7 +16,7 @@ They approved my application within a few hours. Once that's been approved, set 
 
 ## Raspberry Pi and Inky pHAT
 
-Set up a Raspberry Pi with the latest Raspbian and follow the getting started with [Inky pHAT turorial](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat) over at Pimoroni. 
+Set up a Raspberry Pi with the latest Raspbian and follow the [Getting Started with Inky pHAT turorial](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat) over at Pimoroni. 
 
 ## Script customisation
 
@@ -27,5 +27,7 @@ Not sure if this is important or not, but you can edit the colour or size of the
 ## Cron it
 
 Make the script executable by using `chmod +x trends.py`
+
 Then use `crontab -e` to have it execute at regular intervals. I use 15 minutes, but it's a balance of up-to-date data, and preserving the life of your display. 
+
 So, paste this in (change the path) and save your new crontab: `*/15 * * * * /path/to/trends.py`
