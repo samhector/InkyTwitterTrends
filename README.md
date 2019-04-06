@@ -24,7 +24,7 @@ Edit the location ID in trends.py to display info from the geography you're inte
 
 Not sure if this is important or not, but you can edit the colour or size of the screen depending on which Inky model you have. If you have the larger one, you might also like to edit the number of results it pulls in to increase it from 5.
 
-## CRON it
+## Cron it
 
 Make the script executable by using `chmod +x trends.py`
 Then use `crontab -e` to have it execute at regular intervals. I use 15 minutes, but it's a balance of up-to-date data, and preserving the life of your display. 
