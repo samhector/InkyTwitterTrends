@@ -14,7 +14,9 @@ import argparse
 from twitter import *
 from PIL import Image, ImageFont, ImageDraw
 from font_hanken_grotesk import HankenGroteskBold, HankenGroteskMedium
-from inky import InkyPHAT
+from inky.auto import auto
+inky_display = auto()
+inky_display.set_border(inky_display.WHITE)
 
 #-----------------------------------------------------------------------
 # load Twitter API credentials from config.py
@@ -38,15 +40,13 @@ twitter = Twitter(auth = OAuth(config.access_key,
 # You can change the colour if you want, but it's not used
 #-----------------------------------------------------------------------
 
-colour="red"
-inky_display = InkyPHAT(colour)
 scale_size = 1
 padding = 0
 
 img = Image.new("P", (inky_display.WIDTH, inky_display.HEIGHT))
 draw = ImageDraw.Draw(img)
 
-font = ImageFont.truetype(HankenGroteskMedium, 18)
+font = ImageFont.truetype(HankenGroteskMedium, 20)
 
 #-----------------------------------------------------------------------
 # Retrieve localised trends. The current value is for the UK.
@@ -55,7 +55,7 @@ font = ImageFont.truetype(HankenGroteskMedium, 18)
 # twitter API docs: https://dev.twitter.com/rest/reference/get/trends/place
 #-----------------------------------------------------------------------
 
-results = twitter.trends.place(_id = 23424975)
+results = twitter.trends.place(_id = config.PlaceID)
 
 trends_string = ""
 
@@ -63,10 +63,9 @@ for location in results:
     for trend in location["trends"][0:5]:
         trends_string += " - %s" % trend["name"] + "\n"
 
-w, h = font.getsize("Hello, World!")
 x = 0
 y = 0
 
-draw.text((x, y), trends_string, inky_display.RED, font)
+draw.text((x, y), trends_string, inky_display.BLACK, font)
 inky_display.set_image(img)
 inky_display.show()
