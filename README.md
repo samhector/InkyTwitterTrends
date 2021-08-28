@@ -10,7 +10,9 @@ Script modified to display on Inky pHAT by [@samhector](https://twitter.com/samh
 
 You'll need a Developer Twitter account. You can apply for access here: https://developer.twitter.com 
 
-They approved my application within a few hours. Once that's been approved, set up a new App and generate an Access token & access token secret. Put these into the config.py file.
+Once that's been approved, set up a new App and generate your Consumer Keys (API Key & Secret) and Authentication Tokens (Access token & access token secret). 
+
+Put these into the config.py file.
 
 ## Raspberry Pi and Inky pHAT
 
@@ -22,7 +24,15 @@ Edit the location ID in trends.py to display info from the geography you're inte
 
 Not sure if this is important or not, but you can edit the colour or size of the screen depending on which Inky model you have. If you have the larger one, you might also like to edit the number of results it pulls in to increase it from 5.
 
-## Cron it
+## Install the requirements
+
+Using `pip3 install -r requirements.txt`
+
+## Check it works!
+
+Run it using `python3 trends.py`
+
+## Cron it - to make the screen refresh with the latest data regularly
 
 Make the script executable by using `chmod +x trends.py`
 
