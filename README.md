@@ -9,23 +9,24 @@ Original Twitter Trends script by [@ideoforms](https://github.com/ideoforms/) - 
 Script modified to display on Inky pHAT by [@samhector](https://twitter.com/samhector)
 
 # Setup
+
+## Set up Raspberry Pi and Inky pHAT
+
+[Set up a Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up) to the point where you have an active terminal session, and follow the [Getting Started with Inky pHAT turorial](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat) over at Pimoroni. 
+
 ## Twitter Dev Account
 
 You'll need a Developer Twitter account. You can apply for access here: https://developer.twitter.com 
 
-Once that's been approved, set up a new App and generate your Consumer Keys (API Key & Secret) and Authentication Tokens (Access token & access token secret). 
+Once that's been approved, set up a new App and generate your Consumer Keys (API Key & Secret) and Authentication Tokens (Access Token & Access Token Secret). 
 
-Put these into the config.py file.
+Copy & paste these into the config.py file.
 
-## Raspberry Pi and Inky pHAT
+## Customise Location
 
-Set up a Raspberry Pi with the latest Raspbian and follow the [Getting Started with Inky pHAT turorial](https://learn.pimoroni.com/tutorial/sandyj/getting-started-with-inky-phat) over at Pimoroni. 
+Edit the PlaceID in config.py to display info from the geography you're interested in. By default it's the UK. You don't have to use a country, you can localise this to a state or city, if you like. 
 
-## Script customisation
-
-Edit the location ID in trends.py to display info from the geography you're interested in. By default it's the UK.
-
-Not sure if this is important or not, but you can edit the colour or size of the screen depending on which Inky model you have. If you have the larger one, you might also like to edit the number of results it pulls in to increase it from 5.
+It uses the WOEID system. You can look up the WOEID you need here: https://www.findmecity.com/ (click "WOEID Countres" if you'd like to look up yours, eg. USA = 23424977)
 
 ## Install the requirements
 
@@ -39,6 +40,6 @@ Run it using `python3 trends.py`
 
 Make the script executable by using `chmod +x trends.py`
 
-Then use `crontab -e` to have it execute at regular intervals. I use 15 minutes, but it's a balance of up-to-date data, and preserving the life of your display. 
+Then use `crontab -e` to have it execute at regular intervals. I use 15 minutes. 
 
 So, paste this in (change the path) and save your new crontab: `*/15 * * * * /path/to/trends.py`
