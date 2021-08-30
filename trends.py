@@ -40,6 +40,9 @@ twitter = Twitter(auth = OAuth(config.access_key,
 # You can change the colour if you want, but it's not used
 #-----------------------------------------------------------------------
 
+inky_display.h_flip = config.DisplayFlip
+inky_display.v_flip = config.DisplayFlip
+
 scale_size = 1
 padding = 0
 
